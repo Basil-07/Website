@@ -10,3 +10,4 @@ scipy
 seaborn
 fpdf
 imbalanced-learn
+requests
