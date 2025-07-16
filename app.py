@@ -607,12 +607,26 @@ def cleanup_old_files():
                         os.remove(filepath)
                     except:
                         pass
+import os
+import requests
+
+def download_model(url, filename):
+    os.makedirs("model", exist_ok=True)
+    filepath = os.path.join("model", filename)
+    if not os.path.exists(filepath):
+        print(f"🔽 Downloading {filename} ...")
+        r = requests.get(url)
+        with open(filepath, "wb") as f:
+            f.write(r.content)
+        print(f"✅ Saved {filename}")
+
+
+
 
 if __name__ == '__main__':
-    if not os.path.exists("model/ensemble_classifier_chains.pkl"):
-        from multi import train_models  # your training function
-        train_models()  # this saves the models
-
+    # Replace with your direct Google Drive download links
+    download_model("https://drive.google.com/uc?export=download&id=1YrTy9dreNt9-umnfk4j2Ig-wKLQ0oYET")
+    download_model("https://drive.google.com/uc?export=download&id=1YhFeRkxd7mizPxfeE4g51dewJjvaFBws")
     # Clean up old files on startup
     cleanup_old_files()
     
