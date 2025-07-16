@@ -9,3 +9,4 @@ joblib
 scipy
 seaborn
 fpdf
+imbalanced-learn
