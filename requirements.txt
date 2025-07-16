@@ -8,3 +8,4 @@ catboost
 joblib
 scipy
 seaborn
+fpdf
