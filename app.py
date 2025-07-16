@@ -609,6 +609,10 @@ def cleanup_old_files():
                         pass
 
 if __name__ == '__main__':
+    if not os.path.exists("model/ensemble_classifier_chains.pkl"):
+        from multi import train_models  # your training function
+        train_models()  # this saves the models
+
     # Clean up old files on startup
     cleanup_old_files()
     
